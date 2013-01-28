@@ -63,7 +63,7 @@ roots quadratic(float a, float b, float c)
     float negative_b = -1 * b;
 
 
-    if(float_equals(discriminant, 0)
+    if(float_equals(discriminant, 0))
     {
         // Only one root, -b/2a
         result.one = negative_b * one_over_two_a;
