@@ -1,6 +1,7 @@
 #include "linear_algebra.h"
 #include "trig.h"
 #include "generic_types.h"
+#include "common.h"
 #include "fastmath.h"
 
 // Initializers
@@ -225,7 +226,7 @@ float determinant_of_matrix(matrix x)
 
 matrix inverse_of_matrix(matrix m)
 {
-
+	
 }
 
 // Vector and matrix operations
@@ -358,26 +359,6 @@ matrix z_rotation_matrix(float theta)
 	result.data[1][1] = fast_cos(-1 * theta);
 
 	return result;
-}
-
-bool float_equals(float a, float b)
-{
-	float diff = a - b;
-	if(diff < 0)
-	{
-		diff = -1 * diff;
-	}
-
-	if(diff < 0.001)
-	{
-		return true;
-	}
-	return false;
-}
-
-bool float_is_zero(float f)
-{
-	return(float_equals(f, 0.0));
 }
 
 matrix rotation_matrix(vector theta)
