@@ -1,4 +1,4 @@
-
+#include "common.h"
 
 /*
  The following is Copyright id Software, under the terms of their Quake III
@@ -43,4 +43,37 @@ float fast_sqrt(float n)
 {
 	// Yeah...
 	return 1/fast_inv_sqrt(n);
+}
+
+roots quadratic(float a, float b, float c)
+{
+    roots result;
+    result.one = 0.0;
+    result.two = 0.0;
+
+    float discriminant = b*b - (4 * a * c);
+
+    if(discriminant < 0)
+    {
+        // No real roots
+        return result;
+    }
+
+    float one_over_two_a = 1 / (2 * a);
+    float negative_b = -1 * b;
+
+
+    if(float_equals(discriminant, 0)
+    {
+        // Only one root, -b/2a
+        result.one = negative_b * one_over_two_a;
+        return result;
+    }
+
+    // We have two roots in this case
+
+    float root1 = (negative_b + discriminant) * one_over_two_a;
+    float root2 = (negative_b - discriminant) * one_over_two_a;
+
+    return result;
 }
