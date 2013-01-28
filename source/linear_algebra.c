@@ -56,7 +56,7 @@ float magnitude_of_vector(vector v)
 
 vector unit_vector_of_vector(vector v)
 {
-
+	return vector_times_scalar(v, 1/magnitude_of_vector(v));
 }
 
 float square_of_magnitude_of_vector(vector v)
